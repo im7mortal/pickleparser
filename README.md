@@ -68,7 +68,7 @@ fileSelector.addEventListener('change', function (e) {
 
     reader.onload = function (event) {
         const buffer = new Uint8Array(event.target.result);
-        const parser = new pickleparser.Parser();
+        const parser = new Parser();
         const obj = parser.parse(buffer);
         const json = JSON.stringify(obj, null, 4);
         jsonResultPreviewer.innerText = json;
